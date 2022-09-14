@@ -13,12 +13,12 @@ import Search from "./Search";
 // import { Menu } from "@material-ui/icons";
 // import { useState } from "react";
 
-const useStyle = makeStyles((theme) => ({
-  header: {
+const useStyle = makeStyles({
+  headerBar: {
     background: "#2874f0",
     height: 55,
   },
-  component: {
+  componentHeader: {
     marginLeft: "12%",
     lineHeight: 0,
     color: "#FFFFFF",
@@ -44,17 +44,11 @@ const useStyle = makeStyles((theme) => ({
   //   },
   //   menuButton: {
   //     display: "none",
-  //     [theme.breakpoints.down("sm")]: {
-  //       display: "block",
-  //     },
   //   },
   customButtons: {
     margin: "0 5% 0 auto",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
   },
-}));
+});
 
 const ToolBar = withStyles({
   root: {
@@ -90,7 +84,7 @@ const Header = () => {
   //   );
 
   return (
-    <AppBar className={classes.header}>
+    <AppBar className={classes.headerBar}>
       <ToolBar>
         {/*<IconButton
           color="inherit"
@@ -103,7 +97,7 @@ const Header = () => {
         {/*<Drawer open={open} onClose={handleClose}>
           {list()}
   </Drawer>*/}
-        <Link to="/" className={classes.component}>
+        <Link to="/" className={classes.componentHeader}>
           <img src={logoURL} alt="" className={classes.logo} />
           <Box component="span" className={classes.container}>
             <Typography>

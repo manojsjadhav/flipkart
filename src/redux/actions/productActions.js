@@ -5,17 +5,17 @@ import * as actionTypes from "../constant/productConstant";
 
 export const getProducts = () => async (dispatch) => {
   try {
-    const { data } = await axios.get(`http://localhost:8000/products`);
+    const { data } = await axios.get(`https://flipkart-clone-e-commerce.herokuapp.com/products`);
     dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
-    // console.log(data);
+    console.log(data);
   } catch (error) {
     dispatch({ type: actionTypes.GET_PRODUCTS_FAIL, payload: error.response });
   }
 };
 
-export const getProductDetails = (id) => async (dispatch) => {
+export const getProductDetails = (id) => async (dispatch) => {                                 
   try {
-    const {data} = await axios.get(`http://localhost:8000/product/${id}`);
+    const {data} = await axios.get(`https://flipkart-clone-e-commerce.herokuapp.com/product/${id}`);
     console.log(data);
 
     dispatch({ type: actionTypes.GET_PRODUCT_DETAILS_SUCCESS, payload:data });
@@ -27,4 +27,4 @@ export const getProductDetails = (id) => async (dispatch) => {
   }
 };
 
-
+  

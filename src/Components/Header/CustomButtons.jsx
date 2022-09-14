@@ -42,7 +42,7 @@ const CustomButtons = () => {
   const { account, setAccount } = useContext(LoginContext);
 
   const { cartItems } = useSelector((state) => state.cart);
-  console.log("prod",cartItems.length);
+  // console.log("prod",cartItems.length);
 
   const openLoginDialog = () => {
     setOpen(true);

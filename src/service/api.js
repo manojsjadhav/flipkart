@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const url = "http://localhost:8000";
+// const url = "http://localhost:8000";
+
+const url = "https://flipkart-clone-e-commerce.herokuapp.com";
 
 export const authenticateSignup = async (user) => {
   try {

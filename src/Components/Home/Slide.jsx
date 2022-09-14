@@ -59,6 +59,7 @@ const useStyle = makeStyles({
 });
 
 const Slide = ({ timer, title, products }) => {
+  console.log(products)
   const classes = useStyle();
   const timerURL =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg";
@@ -103,7 +104,7 @@ const Slide = ({ timer, title, products }) => {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-        {products.map(product => (
+        {products?.map(product => (
           <Link to={`product/${product.id}`} style={{textDecoration: 'none'}}>
             <Box textAlign="center" className={classes.wrapper}>
               <img src={product.url} alt="" className={classes.image} />

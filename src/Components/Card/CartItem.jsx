@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Card, makeStyles, Typography, Button } from "@material-ui/core";
 import clsx from "clsx";
 import GroupedButton from "./GroupButton";
@@ -10,8 +10,8 @@ const useStyle = makeStyles({
   },
   leftComponent: {
     margin: 20,
-    display:'flex',
-    flexDirection:'column'
+    display: "flex",
+    flexDirection: "column",
   },
   image: {
     height: 110,
@@ -41,6 +41,19 @@ const CartItem = ({ item, removeItemFromCart }) => {
   const fassured =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png";
 
+  const [discountvalue, setDiscountValue] = useState(0);
+  // setDiscountValue(item.price.mrp)
+  useEffect(() => {
+    const dis = parseFloat(item.price.discount) + 10;
+    // const d = parseInt(item.price.discount) + 10;
+    // const di = Number(item.price.discount) + 10;
+    // const a = item.price.mrp;
+    const b = (item.price.mrp * dis) / 100;
+    const e = item.price.mrp - b;
+    const c = Math.floor(e);
+    setDiscountValue(c);
+  }, [discountvalue]);
+
   return (
     <Card className={classes.component}>
       <Box className={classes.leftComponent}>
@@ -59,13 +72,14 @@ const CartItem = ({ item, removeItemFromCart }) => {
           </span>
         </Typography>
         <Typography style={{ margin: "20px 0" }}>
-          <span className={classes.price}>₹{item.price.cost}</span>
+          <span className={classes.price}>₹{discountvalue}</span>
           &nbsp;&nbsp;&nbsp;
           <span className={classes.greyTextColor}>
             <strike>₹{item.price.mrp}</strike>
           </span>
           &nbsp;&nbsp;&nbsp;
           <span style={{ color: "#388E3C" }}>{item.price.discount} off</span>
+          <span style={{ color: "#388E3C" }}>10% off</span>
         </Typography>
         <Button
           //   variant="contained"
