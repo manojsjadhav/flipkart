@@ -12,7 +12,7 @@ function App() {
     <TemplateProvider>
       <ContextProvider>
         <BrowserRouter>
-          {/* <Header /> */}
+          <Header />
           {/* <Home /> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
