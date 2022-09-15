@@ -1,5 +1,6 @@
 import { makeStyles, Typography, Box, Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header/Header";
 
 const useStyle = makeStyles({
   component: {
@@ -40,6 +41,8 @@ const EmptyCart = () => {
   };
 
   return (
+    <>
+    <Header />
     <Box className={classes.component}>
       <Box className={classes.container}>
         <img src={imgurl} className={classes.image} alt="" />
@@ -50,6 +53,7 @@ const EmptyCart = () => {
         </Button>
       </Box>
     </Box>
+    </>
   );
 };
 
