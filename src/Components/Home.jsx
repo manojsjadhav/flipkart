@@ -7,6 +7,7 @@ import MidSection from "./Home/MidSection";
 // import { products } from "../constant/data";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../redux/actions/productActions";
+import Header from "./Header/Header";
 
 const useStyle = makeStyles({
   component: {
@@ -36,6 +37,7 @@ const Home = () => {
 
   return (
     <div>
+    <Header />
       <NavBar />
       <Box className={classes.component}>
         <Banner />
