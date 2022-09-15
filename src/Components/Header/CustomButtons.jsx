@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const useStyle = makeStyles({
   wrapper: {
-    margin: "0 5% 0 auto",
+    margin: "4 5% 0 auto",
     display: "flex",
     "& > *": {
       marginRight: 50,
@@ -33,6 +33,7 @@ const useStyle = makeStyles({
     padding: "5px 40px",
     height: 32,
     boxShadow: "none",
+    marginTop:4
   },
 });
 
