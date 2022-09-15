@@ -15,7 +15,7 @@ function App() {
           {/* <Header /> */}
           <Home />
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            {/* <Route exact path="/" element={<Home />} /> */}
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/product/:id" element={<DetailView />} />
           </Routes>
