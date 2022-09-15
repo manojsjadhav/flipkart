@@ -13,6 +13,7 @@ function App() {
       <ContextProvider>
         <BrowserRouter>
           {/* <Header /> */}
+          <Home />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/cart" element={<Cart />} />
